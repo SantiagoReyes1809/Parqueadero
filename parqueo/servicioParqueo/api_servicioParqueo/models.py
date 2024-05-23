@@ -8,7 +8,10 @@ class Parqueadero(models.Model):
     hora_cierre = models.TimeField()
 
 class Ticket(models.Model):
-    parqueadero = models.ForeignKey(Parqueadero, on_delete=models.CASCADE)
     placa_vehiculo = models.CharField(max_length=20)
-    fecha_ingreso = models.DateTimeField(auto_now_add=True)
-    fecha_salida = models.DateTimeField(null=True, blank=True)
+    hora_ingreso = models.DateTimeField()
+    propietario_vehiculo = models.CharField(max_length=255)
+
+    def __str__(self):
+        return f"Ticket de entrada: {self.placa_vehiculo} - Propietario: {self.propietario_vehiculo}"
+

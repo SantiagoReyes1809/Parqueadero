@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\Users\labinf3.pasto\Documents\parqueadero\venv
+set VIRTUAL_ENV=E:\Parqueadero\parqueo\venv
 
 if not defined PROMPT set PROMPT=$P$G
 

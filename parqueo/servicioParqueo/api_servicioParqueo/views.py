@@ -1,4 +1,5 @@
 from urllib import response
+from django.shortcuts import render
 from rest_framework import  permissions
 from .models import Parqueadero, Ticket
 from .serializers import ParqueaderoSerializer, TicketSerializer
@@ -7,7 +8,8 @@ from django.views.generic import TemplateView
 from rest_framework.views import APIView
 
 
-
+def home(request):
+    return render(request, 'index.html')
 
 class ParqueaderoViewSet(APIView):
     queryset = Parqueadero.objects.all()
