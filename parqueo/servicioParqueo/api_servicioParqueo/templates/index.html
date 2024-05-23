@@ -62,19 +62,19 @@
         </div>
     </nav>
     
-    <section id="hero" style="background: url({%static 'images/banner-img.png'%}); no-repeat center center / cover;">
+    <section id="hero" class="py-buffer" style="background: url({%static 'images/banner-img.png'%}); no-repeat center center / cover;">
         <div class="container py-5">
             <div class="row">
                 <div class="col-lg-6">
                     <div class="p-4">
-                        <h2 class="text-white fw-bold display-4 mb-4">Agrega el vehículo</h2>
+                        <h2 class="text-white fw-bold display-4 py-5">Agrega el vehículo</h2>
                         <p class="text-white fs-5 mb-4">Pasos para agregar el vehículo.</p>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <form class="hero-form p-4" method="post">
+                <div class="col-lg-6 py-5">
+                    <form class="hero-form p-5" method="post">
                         {% csrf_token %}
-                        <h3 class="mb-4">Ticket</h3>
+                        <h3 class="mb-10">Ticket</h3>
                         <div class="mb-3">
                             <label for="id_placa_vehiculo" class="form-label">Placa vehículo</label>
                             <input type="text" name="placa_vehiculo" class="form-control" id="id_placa_vehiculo">
@@ -107,6 +107,15 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+    <script>
+        const form = document.querySelector('.hero-form');
+        form.addEventListener('submit', function(event) {
+          const confirmed = confirm('Are you sure you want to add this vehicle?');
+          if (!confirmed) {
+            event.preventDefault(); // Prevent form submission if not confirmed
+          }
+        });
+      </script>
 </body>
 
 </html>

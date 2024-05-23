@@ -9,7 +9,7 @@ html {
   box-sizing: border-box;
 }
 
-#hero {
+#hero .container {
   min-height: calc(100vh - 56px); /* Ajusta el valor "56px" según el tamaño de tu barra de navegación */
 }
 
@@ -164,8 +164,9 @@ nav.navbar {
 }
 
 form.hero-form {
-  background: #ffffff; /* Cambia el fondo del formulario a blanco */
-  padding: 20px; /* Añade un poco de espacio interno al formulario */
+  background: #ffffff;
+  padding: 20px; /* Cambia el fondo del formulario a blanco */
+  padding-top: 100px; /* Añade un poco de espacio interno al formulario */
   border-radius: 10px; /* Aplica bordes redondeados al formulario */
 }
 
@@ -179,4 +180,9 @@ form.hero-form {
   border-radius: 5px; /* Aplica bordes redondeados a los campos de entrada */
   border: 1px solid #ccc; /* Añade un borde ligero a los campos de entrada */
   margin-bottom: 10px; /* Añade un poco de espacio entre los campos de entrada */
+}
+
+.py-buffer {
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
